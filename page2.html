@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page2.css">
+    <link rel="stylesheet" href="page2.js">
+    <title>Formulaire</title>
+
+</head>
+
+<body>
+    <section>
+        <form class="Formulaire">
+            <h1>Formulaire</h1>
+            <div class="corp-formulaire">
+                <div class="wrapper">
+                    <div class="gauche">
+                        <div class="boite1">
+                            <label for="Ville">Ville</label>
+                            <input type="text" id="ville-input" placeholder="Ville">
+                        </div>
+                        <div class="boite1">
+                            <label for="continent">continent</label>
+                            <div class="select-continent ajouterElement">
+                                <select name="continent" id="continent">
+                            <option value="" disabled selected hidden>---choose---</option>
+                            <option value="Europe">L'Europe</option>
+                            <option value="Amérique du Sud">L'Amérique du Sud</option>
+                        </select>
+                                <div class="nouveau">
+                                    <div class="nouveauText">
+                                        Nouveau
+                                    </div>
+                                    <div class="continentForm hide">
+
+                                        <label class="continentLabel" for="ajouter-continent">
+                                        Ajouter Continent
+                                        <input class="continentInput" type="text" placeholder="nom de continent" id="ajouter-continent" name="ajouter-continent" />
+                                    </label>
+
+                                        <div class="ajouter ajouterContinent">
+                                            Ajouter
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="boite1">
+                            <label for="Restaurant">Restaurant</label>
+                            <div class="ajouterElement">
+                                <input type="text" id="Restaurant" placeholder="Restaurant">
+                                <div class="ajouter">
+                                    Ajouter
+                                </div>
+                            </div>
+                            <div class="resturants">
+
+                            </div>
+
+                        </div>
+                        <div class="boite1">
+                            <label for="Gares">Gares</label>
+                            <div class="ajouterElement">
+                                <input type="text" id="Gares-input" placeholder="Gares">
+                                <div class="ajouter">
+                                    Ajouter
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="boite2">
+                            <label for="Descriptif">Descriptif</label>
+                            <textarea name="Descriptif" id="Descriptif" cols="30" rows="10" placeholder="Descriptif"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="Droite">
+                        <div class="boite1">
+                            <label for="pays">Pays</label>
+                            <div class="select-pays ajouterElement">
+                                <select name="pays" id="pays">
+                            <option value="" disabled selected hidden>---choose---</option>
+                            <option value="Europe">L'Europe</option>
+                            <option value="Amérique du Sud">L'Amérique du Sud</option>
+                        </select>
+                                <div class="nouveau">
+                                    <div class="nouveauText">
+                                        Nouveau
+                                    </div>
+                                    <div class="paysForm continentForm hide">
+                                        <div>
+                                            <label for="choose-continent">Choose Continent</label>
+                                            <select id="choose-continent">
+                                        <option disabled hidden selected>---choose---</option>
+                                        <option value="Europe">L'Europe</option>
+                                    </select>
+                                        </div>
+                                        <div>
+                                            <label class="continentLabel" for="ajouter-continent">
+                                        Ajouter Pays
+                                        <input class="continentInput" type="text" placeholder="nom de pays" id="ajouter-continent" name="ajouter-continent" />
+                                    </label>
+                                        </div>
+                                        <div class="ajouter ajouterContinent">
+                                            Ajouter
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="boite1">
+                            <label for="Hotel">Hotel</label>
+                            <div class="ajouterElement">
+                                <input type="text" id="Hotel-input" placeholder="Hotel">
+                                <div class="ajouter">
+                                    Ajouter
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="boite1">
+                            <div class="siteWrapper">
+                                <label class="labelSite" for="site">
+                                Site
+                                <input class="siteInput" type="text" id="site" name="site" placeholder="site"/>
+                            </label>
+                                <label class="photo" for="photo">
+                                Photo
+                                <input class="sitePhoto"  type="file" id="photo" name="photo"/>
+                            </label>
+                                <div class="ajouter ajouterSite">
+                                    Ajouter
+                                </div>
+                            </div>
+                        </div>
+                        <div class="boite1">
+                            <label for="Aeroports">Aeroports</label>
+                            <div class="ajouterElement">
+                                <input type="text" id="Aeroports-input" placeholder="Aeroports">
+                                <div class="ajouter">
+                                    Ajouter
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="boite2">
+                            <label class="photo-input" for="Photo-input">Photos
+                        </label>
+                            <input type="file" id="Photo-input" name="Photo-input" placeholder="Ajouter une photo">
+                        </div>
+                    </div>
+                </div>
+                <div class="button "><button type="submit">Ajouter</button>
+                </div>
+        </form>
+    </section>
+
+    <script src="page2.js"></script>
+</body>
+
+</html>
