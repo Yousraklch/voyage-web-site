@@ -62,7 +62,7 @@ if (isset($_GET['search'])) {
             <!-- <img src="voyage.jpg" alt="voyage" /> -->
             <h1>Move Guide</h1>
         </div>
-        <form action="" class="search">
+        <form action="" class="search" method="get">
 
             <div class="input-field">
 
