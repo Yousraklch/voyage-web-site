@@ -1,6 +1,6 @@
 <?php
 require_once "config/config.php";
-$result = [];
+$result;
 if (isset($_GET['search'])) {
     $continent = $_GET['continent'];
     $pay = $_GET['pay'];
@@ -80,17 +80,17 @@ if (isset($_GET['search'])) {
 
             <div class="input-field">
                 <label for="pays">pay</label>
-                <input type="text" name="pay" id="pay" value=<?=$_GET['pay']?> required>
+                <input type="text" name="pay" id="pay" value="<?=(isset($_GET['pay']) ? $_GET['pay'] : '')?>" required >
             </div>
 
             <div class="input-field">
                 <label for="ville">ville</label>
-                <input type="text" name="ville" value=<?=$_GET['ville']?> id="ville" required>
+                <input type="text" name="ville" value="<?=(isset($_GET['ville']) ? $_GET['ville'] : '')?>" id="ville" required>
             </div>
 
             <div class="input-field">
                 <label for="site">site</label>
-                <input type="text" name="site" value=<?=$_GET['site']?> id="site" required>
+                <input type="text" name="site" value="<?=(isset($_GET['site']) ? $_GET['site'] : '')?>" id="site" required>
             </div>
 
             <div class="input-field">
@@ -102,8 +102,9 @@ if (isset($_GET['search'])) {
         <div class="search-result">
             <div class="content">
                <?php
-while ($site = $result->fetchObject()) {
-    echo "
+if (isset($result)) {
+    while ($site = $result->fetchObject()) {
+        echo "
                      <a href='site-details/$site->idsit' class='site'>
 
                         <div class='desc'>
@@ -113,6 +114,8 @@ while ($site = $result->fetchObject()) {
                         </div>
                     </a>
                     ";
+    }
+
 }
 ?>
             </div>
