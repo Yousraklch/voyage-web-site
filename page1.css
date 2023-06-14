@@ -190,7 +190,7 @@ form.search .input-field input[type="submit"]:hover {
 }
 
 .search-result .content .site:hover .desc {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
 }
 
 .search-result .content .site h4 {
