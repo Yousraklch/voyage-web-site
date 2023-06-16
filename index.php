@@ -5,7 +5,7 @@ if (isset($_GET['search'])) {
     $continent = $_GET['continent'];
     $pay = $_GET['pay'];
     $ville = $_GET['ville'];
-    $site = $_GET['site'];
+    // $site = $_GET['site'];
 
     $stmt = $conn->prepare("SELECT ville.*, pays.nompay, continent.nomcon from ville
     JOIN pays ON ville.idpay = pays.idpay
@@ -102,10 +102,10 @@ if (isset($_GET['search'])) {
                 <input type="text" name="ville" value="<?=(isset($_GET['ville']) ? $_GET['ville'] : '')?>" id="ville" required>
             </div>
 
-            <div class="input-field">
+            <!-- <div class="input-field">
                 <label for="site">site</label>
                 <input type="text" name="site" value="<?=(isset($_GET['site']) ? $_GET['site'] : '')?>" id="site" required>
-            </div>
+            </div> -->
 
             <div class="input-field">
                 <input type="submit" value="Search" name="search">
@@ -117,11 +117,10 @@ if (isset($_GET['search'])) {
             <div class="content">
                <?php
 if (!empty($result)) {
-   
 
-    if($result->rowCount() != 0){
+    if ($result->rowCount() != 0) {
         while ($ville = $result->fetchObject()) {
-    echo "
+            echo "
                      <a href='page3.php?idvil=$ville->idvil' class='site'>
 
                         <div class='desc'>
@@ -132,11 +131,11 @@ if (!empty($result)) {
                         </div>
                     </a>
                     ";
-}
+        }
 
     } else {
-    echo "<p>Not found</p>";
-}
+        echo "<p>Not found</p>";
+    }
 
 }
 ?>
