@@ -13,3 +13,49 @@ img {
     height: 400px;
     margin-left: 70px;
 }
+
+.search-result {
+    position: relative;
+}
+
+.search-result .content {
+    display: flex;
+    gap: 1%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.search-result .content .site {
+    width: 49%;
+    cursor: pointer;
+}
+
+.search-result .content .site .desc {
+    padding: 15px;
+    background: #7f9bff;
+    box-shadow: var(--shadow-1);
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.search-result .content .site .desc p {
+    color: black;
+    margin: 15px 0;
+}
+
+.search-result .content .site:hover .desc {
+    transform: translateY(-10px);
+}
+
+.search-result .content .site h4 {
+    margin-bottom: 15px;
+    color: rgb(13, 13, 47);
+    text-transform: capitalize;
+}
+
+.search-result .content .site label {
+    display: block;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-align: right;
+}

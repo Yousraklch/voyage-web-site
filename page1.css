@@ -177,6 +177,7 @@ form.search .input-field input[type="submit"]:hover {
 .search-result .content .site {
     width: 49%;
     cursor: pointer;
+    margin-bottom: 25px;
 }
 
 .search-result .content .site .desc {
@@ -185,6 +186,11 @@ form.search .input-field input[type="submit"]:hover {
     box-shadow: var(--shadow-1);
     border-radius: 8px;
     transition: 0.2s;
+}
+
+.search-result .content .site .desc p {
+    color: black;
+    margin: 15px 0;
 }
 
 .search-result .content .site:hover .desc {
@@ -198,5 +204,8 @@ form.search .input-field input[type="submit"]:hover {
 }
 
 .search-result .content .site label {
+    display: block;
+    text-transform: capitalize;
     cursor: pointer;
+    text-align: right;
 }

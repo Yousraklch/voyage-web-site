@@ -181,7 +181,7 @@ if (isset($villes)) {
                 <textarea name="description" required></textarea>
             </div>
             <hr>
-            <input type="text" name="necs" id="necval" >
+            <input type="text" name="necs" id="necval" hidden>
             <div class="input-field btn">
                 <button type="button" onclick="addNec();">add necessaire</button>
             </div>
