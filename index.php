@@ -7,28 +7,27 @@ if (isset($_GET['search'])) {
     $ville = $_GET['ville'];
     $site = $_GET['site'];
 
-    $stmt = $conn->prepare("SELECT site.* , ville.nomvil, pays.nompay, continent.nomcon from site
-    JOIN ville ON site.idvil = ville.idvil
+    $stmt = $conn->prepare("SELECT ville.*, pays.nompay, continent.nomcon from ville
     JOIN pays ON ville.idpay = pays.idpay
     JOIN continent ON pays.idcon = continent.idcon
     WHERE(
         continent.nomcon LIKE '%$continent%' AND
         pays.nompay LIKE '%$pay%' AND
-        ville.nomvil LIKE '%$ville%' AND
-        site.nomsit LIKE '%$site%'
+        ville.nomvil LIKE '%$ville%'
     )
    ");
     $stmt->execute();
-    // echo "<pre>";
+    echo "<pre>";
     // echo "row count " . $stmt->rowCount() . "<br>";
     // while ($ob = $stmt->fetchObject()) {
     //     print_r($ob);
     // }
-    // echo "</pre>";
+    echo "</pre>";
 
     $result = $stmt;
 
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -68,11 +67,26 @@ if (isset($_GET['search'])) {
 
                 <label for="continent">continent</label>
                 <select name="continent" required>
-                    <option value="afrique" <?=(isset($_GET['continent']) && $_GET['continent'] == "afrique") ? "selected" : ""?> >
-                        afrique
+                    <option value="asia" <?=(isset($_GET['continent']) && $_GET['continent'] == "asia") ? "selected" : ""?> >
+                        asia
                     </option>
-                    <option value="afrique"  <?=(isset($_GET['continent']) && $_GET['continent'] == "australia") ? "selected" : ""?>>
+                    <option value="africa" <?=(isset($_GET['continent']) && $_GET['continent'] == "africa") ? "selected" : ""?> >
+                        africa
+                    </option>
+                    <option value="europe" <?=(isset($_GET['continent']) && $_GET['continent'] == "europe") ? "selected" : ""?> >
+                        europe
+                    </option>
+                    <option value="north america" <?=(isset($_GET['continent']) && $_GET['continent'] == "north america") ? "selected" : ""?> >
+                        north america
+                    </option>
+                    <option value="south america" <?=(isset($_GET['continent']) && $_GET['continent'] == "south america") ? "selected" : ""?> >
+                        south america
+                    </option>
+                    <option value="australia"  <?=(isset($_GET['continent']) && $_GET['continent'] == "australia") ? "selected" : ""?>>
                         australia
+                    </option>
+                    <option value="antarctica"  <?=(isset($_GET['continent']) && $_GET['continent'] == "antarctica") ? "selected" : ""?>>
+                        antarctica
                     </option>
                 </select>
 
@@ -102,19 +116,27 @@ if (isset($_GET['search'])) {
         <div class="search-result">
             <div class="content">
                <?php
-if (isset($result)) {
-    while ($site = $result->fetchObject()) {
-        echo "
-                     <a href='site-details/$site->idsit' class='site'>
+if (!empty($result)) {
+   
+
+    if($result->rowCount() != 0){
+        while ($ville = $result->fetchObject()) {
+    echo "
+                     <a href='page3.php?idvil=$ville->idvil' class='site'>
 
                         <div class='desc'>
-                            <h4>$site->nomsit</h4>
-                            <label>$site->nomvil</label>
-                            <label>$site->nomcon</label>
+                            <h4>$ville->nomvil</h4>
+                            <p>$ville->descvil</p>
+                            <label>$ville->nompay</label>
+                            <label>$ville->nomcon</label>
                         </div>
                     </a>
                     ";
-    }
+}
+
+    } else {
+    echo "<p>Not found</p>";
+}
 
 }
 ?>
