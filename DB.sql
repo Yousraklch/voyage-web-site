@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2023 at 07:47 PM
+-- Generation Time: Jun 16, 2023 at 11:14 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.4
 
@@ -39,7 +39,13 @@ CREATE TABLE `continent` (
 --
 
 INSERT INTO `continent` (`idcon`, `nomcon`) VALUES
-(1, 'afrique ');
+(1, 'asia'),
+(2, 'africa'),
+(3, 'europe'),
+(4, 'north amer'),
+(5, 'south amer'),
+(6, 'australia'),
+(7, 'antarctica');
 
 -- --------------------------------------------------------
 
@@ -59,12 +65,8 @@ CREATE TABLE `necessaire` (
 --
 
 INSERT INTO `necessaire` (`idnec`, `typenec`, `nomnec`, `idvil`) VALUES
-(1, 'hotel', 'hotel alger 1', 1),
-(2, 'gare', 'gare alger 1', 1),
-(3, 'gare', 'gare alger 2', 1),
-(4, 'aeroport', 'aeropor alger 1', 1),
-(5, 'aeroport', 'aeroport oran 2', 3),
-(6, 'gare', 'gare anaba 1', 2);
+(23, 'hotel', 'hotel 1', 11),
+(24, 'gare', 'gare 1', 12);
 
 -- --------------------------------------------------------
 
@@ -83,7 +85,7 @@ CREATE TABLE `pays` (
 --
 
 INSERT INTO `pays` (`idpay`, `nompay`, `idcon`) VALUES
-(1, 'algeria', 1);
+(4, 'algeria', 2);
 
 -- --------------------------------------------------------
 
@@ -103,12 +105,8 @@ CREATE TABLE `site` (
 --
 
 INSERT INTO `site` (`idsit`, `nomsit`, `cheminphoto`, `idvil`) VALUES
-(1, 'site alger 1', '1.png', 1),
-(2, 'site alger 2', '2.jpg', 1),
-(3, 'site anaba 1', '3.jpg', 2),
-(4, 'site anaba 2', '4.png', 2),
-(5, 'site oran 1', '5.jpg', 3),
-(6, 'site oran 2', '6.jpg', 3);
+(33, 'site alger 1', 'sitealgerphoto1', 11),
+(34, 'site oran 1', 'siteoran1', 12);
 
 -- --------------------------------------------------------
 
@@ -128,9 +126,9 @@ CREATE TABLE `ville` (
 --
 
 INSERT INTO `ville` (`idvil`, `nomvil`, `descvil`, `idpay`) VALUES
-(1, 'alger', 'alger', 1),
-(2, 'anaba', 'anaba', 1),
-(3, 'oran', 'oran', 1);
+(11, 'alger', 'alger description', 4),
+(12, 'oran', 'oran', 4),
+(13, 'anaba', 'anaba', 4);
 
 --
 -- Indexes for dumped tables
@@ -178,31 +176,31 @@ ALTER TABLE `ville`
 -- AUTO_INCREMENT for table `continent`
 --
 ALTER TABLE `continent`
-  MODIFY `idcon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idcon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `necessaire`
 --
 ALTER TABLE `necessaire`
-  MODIFY `idnec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idnec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `pays`
 --
 ALTER TABLE `pays`
-  MODIFY `idpay` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idpay` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `site`
 --
 ALTER TABLE `site`
-  MODIFY `idsit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idsit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `ville`
 --
 ALTER TABLE `ville`
-  MODIFY `idvil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idvil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
